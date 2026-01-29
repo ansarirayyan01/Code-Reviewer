@@ -48,7 +48,4 @@ You can find these via the Command Palette (`Ctrl+Shift+P`) by searching for **"
   You can replace this SVG with your own logo (recommended size: 128×128).
 - To show screenshots on the Marketplace later, you can add images (e.g. `images/overview.png`) and reference them from this README with standard markdown:
 
-```markdown
-![AI Code Reviewer screenshot](images/overview.png)
-```
 
