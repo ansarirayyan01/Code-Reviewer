@@ -4,10 +4,13 @@ const cors = require('cors')
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: process.env.CORS_ORIGIN || "http://localhost:5173",
+}))
 
 
-app.use(express.json())
+// Basic hardening: avoid accidental huge payloads
+app.use(express.json({ limit: "256kb" }))
 
 app.get('/', (req, res) => {
     res.send('Hello World')
