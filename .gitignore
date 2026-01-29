@@ -1,2 +1,8 @@
 node_modules
 .env
+
+# VS Code extension build artifacts and local files
+vscode-extension/*.vsix
+vscode-extension/out/
+vscode-extension/.vscode/
+vscode-extension/node_modules/

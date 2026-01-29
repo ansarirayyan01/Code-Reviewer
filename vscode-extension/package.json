@@ -1,0 +1,61 @@
+{
+  "name": "ai-code-reviewer",
+  "displayName": "Code Reviewer",
+  "description": "Review the current file or selection using your local AI code review backend.",
+  "version": "0.0.2",
+  "publisher": "local",
+  "icon": "assets/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:aiCodeReviewer.reviewSelection",
+    "onCommand:aiCodeReviewer.reviewFile"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "aiCodeReviewer.reviewSelection",
+        "title": "Code Review: Review Selection"
+      },
+      {
+        "command": "aiCodeReviewer.reviewFile",
+        "title": "Code Review: Review Current File"
+      }
+    ],
+    "configuration": {
+      "title": "Code Reviewer",
+      "properties": {
+        "aiCodeReviewer.apiBaseUrl": {
+          "type": "string",
+          "default": "http://localhost:3000",
+          "description": "Base URL of your AI backend (e.g. http://localhost:3000)."
+        },
+        "aiCodeReviewer.requestTimeoutMs": {
+          "type": "number",
+          "default": 60000,
+          "description": "Request timeout in milliseconds."
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-name/ai-code-reviewer"
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.6.3"
+  }
+}
+
